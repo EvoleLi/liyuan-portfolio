@@ -45,13 +45,6 @@ export default function Footer({ data }) {
         <div>
           <h4 className="text-sm font-semibold text-text-heading mb-4">联系方式</h4>
           <ul className="space-y-2.5 text-sm text-text-light">
-            {data?.email && (
-              <li>
-                <a href={`mailto:${data.email}`} className="hover:text-primary transition-colors">
-                  邮箱：{data.email}
-                </a>
-              </li>
-            )}
             {data?.location && <li>地点：{data.location}</li>}
           </ul>
         </div>

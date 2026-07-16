@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiMail, FiGithub, FiLinkedin, FiBookOpen } from 'react-icons/fi';
+import { FiMail } from 'react-icons/fi';
 
 export default function Contact({ data }) {
   return (
@@ -19,60 +19,14 @@ export default function Contact({ data }) {
             如果你正在寻找一名嵌入式软件工程师，或对我的项目感兴趣，欢迎随时联系我。
           </p>
 
-          {/* 主 CTA */}
-          <div className="flex flex-wrap justify-center gap-4 mb-9">
-            <a
-              href={`mailto:${data.email}`}
-              className="inline-flex items-center gap-2 bg-gradient-brand text-white px-7 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity"
-            >
-              <FiMail size={18} />
-              {data.email}
-            </a>
-          </div>
-
-          {/* 社交链接 */}
-          <div className="flex justify-center gap-5">
-            {data.github && (
-              <a
-                href={data.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-light hover:text-primary transition-colors"
-                title="GitHub"
-              >
-                <FiGithub size={22} />
-              </a>
-            )}
-            {data.linkedin && (
-              <a
-                href={data.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-light hover:text-primary transition-colors"
-                title="LinkedIn"
-              >
-                <FiLinkedin size={22} />
-              </a>
-            )}
-            {data.blog && (
-              <a
-                href={data.blog}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-light hover:text-primary transition-colors"
-                title="博客"
-              >
-                <FiBookOpen size={22} />
-              </a>
-            )}
-            <a
-              href={`mailto:${data.email}`}
-              className="text-text-light hover:text-primary transition-colors"
-              title="邮箱"
-            >
-              <FiMail size={22} />
-            </a>
-          </div>
+          {/* 唯一联系方式：邮箱 */}
+          <a
+            href={`mailto:${data.email}`}
+            className="inline-flex items-center gap-2 bg-gradient-brand text-white px-7 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity"
+          >
+            <FiMail size={18} />
+            {data.email}
+          </a>
         </motion.div>
       </div>
     </section>
