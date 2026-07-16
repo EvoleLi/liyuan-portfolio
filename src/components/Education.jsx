@@ -4,7 +4,7 @@ export default function Education({ data }) {
   if (!data.education || data.education.length === 0) return null;
 
   return (
-    <section className="py-12 px-6 bg-bg-alt">
+    <section id="education" className="py-12 px-6 bg-bg-alt">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

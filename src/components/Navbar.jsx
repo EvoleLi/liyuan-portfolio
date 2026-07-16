@@ -4,6 +4,7 @@ import { FiMenu, FiX } from 'react-icons/fi';
 const navItems = [
   { id: 'about', label: '关于' },
   { id: 'experience', label: '经历' },
+  { id: 'education', label: '教育' },
   { id: 'skills', label: '技能' },
   { id: 'projects', label: '项目' },
   { id: 'contact', label: '联系' },
