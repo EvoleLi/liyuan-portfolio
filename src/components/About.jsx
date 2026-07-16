@@ -13,10 +13,10 @@ export default function About({ data }) {
     <section id="about" className="py-20 px-6">
       <div className="max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <p className="eyebrow text-center mb-3">ABOUT</p>
           <h2 className="text-3xl md:text-4xl font-bold text-text-heading text-center mb-4">关于我</h2>
@@ -37,7 +37,7 @@ export default function About({ data }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="bg-white rounded-2xl p-6 border border-border text-center hover:shadow-md hover:-translate-y-0.5 transition"
+                  className="card p-6 text-center"
                 >
                   <div className="w-12 h-12 bg-gradient-brand rounded-xl flex items-center justify-center mx-auto mb-3">
                     <Icon className="text-white" size={22} />

@@ -7,10 +7,10 @@ export default function Education({ data }) {
     <section id="education" className="py-12 px-6 bg-bg-alt">
       <div className="max-w-3xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <p className="eyebrow text-center mb-3">EDUCATION</p>
           <h2 className="text-3xl md:text-4xl font-bold text-text-heading text-center mb-4">教育背景</h2>
@@ -24,7 +24,7 @@ export default function Education({ data }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white border border-border rounded-2xl p-6"
+                className="card p-6"
               >
                 <h3 className="font-semibold text-text-heading text-lg">{edu.school}</h3>
                 <p className="text-primary font-medium text-sm mt-1">

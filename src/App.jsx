@@ -8,11 +8,13 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollProgress from './components/ScrollProgress';
 import profileData from './data/profile.json';
 
 export default function App() {
   return (
     <div className="min-h-screen bg-white">
+      <ScrollProgress />
       <Navbar />
       <main>
         <Hero data={profileData} />

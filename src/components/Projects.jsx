@@ -8,10 +8,10 @@ export default function Projects({ data }) {
     <section id="projects" className="py-20 px-6 bg-bg-alt">
       <div className="max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <p className="eyebrow text-center mb-3">PROJECTS</p>
           <h2 className="text-3xl md:text-4xl font-bold text-text-heading text-center mb-4">项目精选</h2>
@@ -25,7 +25,7 @@ export default function Projects({ data }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white border border-border rounded-xl p-6 hover:shadow-md hover:-translate-y-0.5 transition flex flex-col"
+                className="card p-6 flex flex-col"
               >
                 <h3 className="font-semibold text-lg text-text-heading mb-2">{proj.name}</h3>
                 <p className="text-text-light text-sm flex-1 mb-3">{proj.description}</p>

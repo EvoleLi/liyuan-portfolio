@@ -5,10 +5,10 @@ export default function Experience({ data }) {
     <section id="experience" className="py-20 px-6">
       <div className="max-w-3xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <p className="eyebrow text-center mb-3">EXPERIENCE</p>
           <h2 className="text-3xl md:text-4xl font-bold text-text-heading text-center mb-4">工作经历</h2>
@@ -29,7 +29,7 @@ export default function Experience({ data }) {
                 <div className="absolute left-[-9px] top-1 w-4 h-4 bg-primary rounded-full border-4 border-white md:hidden" />
 
                 {/* Card */}
-                <div className="bg-white border border-border rounded-xl p-6 hover:shadow-md hover:-translate-y-0.5 transition">
+                <div className="card p-6">
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                     <div>
                       <h3 className="font-semibold text-lg text-text-heading">{exp.role}</h3>

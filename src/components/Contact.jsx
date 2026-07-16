@@ -6,10 +6,10 @@ export default function Contact({ data }) {
     <section id="contact" className="py-20 px-6 bg-bg-alt">
       <div className="max-w-3xl mx-auto text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <p className="eyebrow mb-3">CONTACT</p>
           <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4">

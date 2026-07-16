@@ -13,11 +13,29 @@ const navItems = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState('about');
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // 滚动联动高亮当前区块
+  useEffect(() => {
+    const sections = navItems
+      .map((i) => document.getElementById(i.id))
+      .filter(Boolean);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
   }, []);
 
   const scrollTo = (id) => {
@@ -49,9 +67,16 @@ export default function Navbar() {
             <button
               key={item.id}
               onClick={() => scrollTo(item.id)}
-              className="text-sm text-text-light hover:text-primary transition-colors"
+              className={`relative text-sm transition-colors ${
+                active === item.id ? 'text-primary' : 'text-text-light hover:text-primary'
+              }`}
             >
               {item.label}
+              <span
+                className={`absolute -bottom-1.5 left-0 right-0 mx-auto h-0.5 rounded-full bg-gradient-brand transition-all duration-300 ${
+                  active === item.id ? 'w-full opacity-100' : 'w-0 opacity-0'
+                }`}
+              />
             </button>
           ))}
           <button

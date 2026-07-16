@@ -5,10 +5,10 @@ export default function Skills({ data }) {
     <section id="skills" className="py-20 px-6">
       <div className="max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <p className="eyebrow text-center mb-3">SKILLS</p>
           <h2 className="text-3xl md:text-4xl font-bold text-text-heading text-center mb-4">专业技能</h2>
@@ -22,7 +22,7 @@ export default function Skills({ data }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white border border-border rounded-xl p-5 hover:shadow-md hover:-translate-y-0.5 transition"
+                className="card p-5"
               >
                 <h3 className="font-semibold text-text-heading mb-3 text-sm uppercase tracking-wide text-primary font-mono">
                   {group.category}
