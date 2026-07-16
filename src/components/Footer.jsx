@@ -52,9 +52,7 @@ export default function Footer({ data }) {
                 </a>
               </li>
             )}
-            {data?.phone && <li>电话：{data.phone}</li>}
             {data?.location && <li>地点：{data.location}</li>}
-            {data?.qq && <li>QQ：{data.qq}</li>}
           </ul>
         </div>
       </div>

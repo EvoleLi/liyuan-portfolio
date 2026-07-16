@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiMail, FiMapPin, FiGithub, FiLinkedin, FiBookOpen } from 'react-icons/fi';
+import { FiMail, FiGithub, FiLinkedin, FiBookOpen } from 'react-icons/fi';
 
 export default function Contact({ data }) {
   return (
@@ -28,15 +28,6 @@ export default function Contact({ data }) {
               <FiMail size={18} />
               {data.email}
             </a>
-            {data.phone && (
-              <a
-                href={`tel:${data.phone}`}
-                className="inline-flex items-center gap-2 border border-border text-text px-7 py-3 rounded-full font-semibold hover:border-primary hover:text-primary transition-colors"
-              >
-                <FiMapPin size={18} />
-                {data.phone}
-              </a>
-            )}
           </div>
 
           {/* 社交链接 */}
