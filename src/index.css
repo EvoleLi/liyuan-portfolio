@@ -1,23 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  /* 参考 notefolio「FURAI BIOS」的极简科技配色 */
-  --color-primary: #1b48ff;        /* 电光蓝 */
-  --color-primary-dark: #163bd6;
-  --color-primary-light: #eaefff;
-  --color-accent: #1ecad3;         /* 青色 */
-  --color-accent-2: #f85272;       /* 珊瑚粉 */
-  --color-accent-2-light: #fdeef1;
+  /* 参考 ClipNow 的干净现代创意风（浅色版）：现代紫 + 青渐变 */
+  --color-primary: #635bff;        /* 现代创意紫 */
+  --color-primary-dark: #4f46e5;
+  --color-primary-light: #eef0ff;
+  --color-accent: #22d3ee;         /* 青色 */
 
-  /* 中性色（近黑 + 暖灰，参考页文字 #161C1C） */
-  --color-text: #3c4242;
-  --color-text-light: #8a9292;
-  --color-text-heading: #161c1c;
+  /* 浅色中性色（近黑文字 + 冷灰） */
+  --color-text: #0d0d0d;
+  --color-text-light: #6b7280;
+  --color-text-heading: #0d0d0d;
   --color-bg: #ffffff;
-  --color-bg-alt: #f6f8f8;
-  --color-border: #e6ebeb;
+  --color-bg-alt: #f6f7f9;
+  --color-border: #e8eaed;
 
-  --font-sans: 'Pretendard', 'Inter', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
@@ -48,7 +46,7 @@
   }
 }
 
-/* 品牌渐变工具类（蓝 → 青） */
+/* 品牌渐变工具类（紫 → 青） */
 @layer utilities {
   .text-gradient {
     background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
@@ -59,24 +57,4 @@
   .bg-gradient-brand {
     background-image: linear-gradient(135deg, var(--color-primary), var(--color-accent));
   }
-}
-
-/* 终端闪烁光标 */
-@keyframes blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
-}
-.blink {
-  animation: blink 1s steps(1, end) infinite;
-}
-
-/* Hero 点阵网格（极淡，呼应科技感） */
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(22, 28, 28, 0.05) 1px, transparent 1px);
-  background-size: 26px 26px;
-  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 38%, #000 30%, transparent 75%);
-  mask-image: radial-gradient(ellipse 75% 65% at 50% 38%, #000 30%, transparent 75%);
-  pointer-events: none;
 }

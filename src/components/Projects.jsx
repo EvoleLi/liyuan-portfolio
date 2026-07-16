@@ -17,7 +17,7 @@ export default function Projects({ data }) {
           <h2 className="text-3xl font-bold text-text-heading text-center mb-4">项目精选</h2>
           <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-12" />
 
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {data.projects.map((proj, i) => (
               <motion.div
                 key={i}
