@@ -1,20 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  /* 参考 ClipNow 的干净现代创意风（浅色版）：现代紫 + 青渐变 */
-  --color-primary: #635bff;        /* 现代创意紫 */
-  --color-primary-dark: #4f46e5;
-  --color-primary-light: #eef0ff;
-  --color-accent: #22d3ee;         /* 青色 */
-
-  /* 浅色中性色（近黑文字 + 冷灰） */
-  --color-text: #0d0d0d;
-  --color-text-light: #6b7280;
-  --color-text-heading: #0d0d0d;
+  /* Stone 暖灰中性色板（参考 astro-theme-stone） */
+  --color-primary: #57534e;        /* stone-600 按钮 / 强调 */
+  --color-primary-dark: #44403c;  /* stone-700 悬浮 */
+  --color-primary-light: #f5f5f4; /* stone-100 标签底 */
+  --color-accent: #78716c;        /* stone-500 次级 */
+  --color-text: #1c1917;        /* stone-900 */
+  --color-text-light: #78716c;    /* stone-500 */
+  --color-text-heading: #1c1917; /* stone-900 */
   --color-bg: #ffffff;
-  --color-bg-alt: #f6f7f9;
-  --color-border: #e8eaed;
-
+  --color-bg-alt: #fafaf9;     /* stone-50 */
+  --color-border: #e7e5e4;     /* stone-200 */
   --font-sans: 'Inter', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
@@ -35,7 +32,7 @@
     font-family: var(--font-sans);
     color: var(--color-text);
     background: var(--color-bg);
-    line-height: 1.7;
+    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -46,16 +43,15 @@
   }
 }
 
-/* 品牌渐变工具类（紫 → 青） */
+/* Stone 风工具类（克制、实色、无渐变） */
 @layer utilities {
+  /* 标题：纯色近黑（去渐变） */
   .text-gradient {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--color-text-heading);
   }
+  /* 按钮 / 进度条 / 强调条：实色 stone-600 */
   .bg-gradient-brand {
-    background-image: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    background-color: var(--color-primary);
   }
   .eyebrow {
     font-size: 0.8rem;
@@ -64,63 +60,16 @@
     text-transform: uppercase;
     color: var(--color-primary);
   }
-
-  /* 环境光晕背景（高级感：柔和的品牌色光斑 + 点阵） */
-  .ambient {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-  }
-  .ambient::before {
-    content: "";
-    position: absolute;
-    width: 46rem;
-    height: 46rem;
-    top: -14rem;
-    left: -10rem;
-    background: radial-gradient(circle at center, rgba(99, 91, 255, 0.18), transparent 65%);
-    filter: blur(20px);
-  }
-  .ambient::after {
-    content: "";
-    position: absolute;
-    width: 40rem;
-    height: 40rem;
-    bottom: -16rem;
-    right: -8rem;
-    background: radial-gradient(circle at center, rgba(34, 211, 238, 0.16), transparent 65%);
-    filter: blur(20px);
-  }
-  /* 细点阵纹理 */
-  .dot-grid {
-    background-image: radial-gradient(rgba(13, 13, 13, 0.05) 1px, transparent 1px);
-    background-size: 22px 22px;
-  }
-
-  /* 精致卡片：柔和分层阴影 + 悬浮辉光描边 */
+  /* 精致卡片：细边框 + 大圆角 + 柔和阴影，悬浮轻微上浮（无炫光） */
   .card {
     background: #ffffff;
     border: 1px solid var(--color-border);
-    border-radius: 1rem;
+    border-radius: 1.25rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   }
   .card:hover {
     transform: translateY(-4px);
-    border-color: rgba(99, 91, 255, 0.4);
-    box-shadow: 0 18px 40px -18px rgba(99, 91, 255, 0.35),
-      0 8px 20px -12px rgba(34, 211, 238, 0.25);
-  }
-
-  /* 发丝级渐变分隔线 */
-  .hairline {
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(99, 91, 255, 0.5),
-      rgba(34, 211, 238, 0.5),
-      transparent
-    );
+    border-color: #d6d3d1;
+    box-shadow: 0 22px 45px -24px rgba(28, 25, 23, 0.18);
   }
 }

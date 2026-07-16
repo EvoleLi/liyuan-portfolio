@@ -4,17 +4,13 @@ import { FiDownload, FiMail } from 'react-icons/fi';
 export default function Hero({ data }) {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-16 overflow-hidden bg-bg">
-      {/* 环境光晕 + 点阵（高级感） */}
-      <div className="ambient" />
-      <div className="absolute inset-0 dot-grid opacity-60" />
-
       <motion.div
         initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
         className="relative z-10 text-center max-w-3xl w-full"
       >
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-text-heading">
+        <h1 className="text-5xl md:text-6xl font-medium tracking-tight text-text-heading">
           {data.name}
         </h1>
 

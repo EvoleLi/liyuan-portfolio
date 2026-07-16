@@ -34,7 +34,6 @@ export default function Stats({ data }) {
 
   return (
     <section className="py-16 px-6 bg-bg-alt border-y border-border relative overflow-hidden">
-      <div className="ambient opacity-70" />
       <div className="max-w-5xl mx-auto relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
