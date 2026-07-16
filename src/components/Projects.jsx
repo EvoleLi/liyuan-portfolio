@@ -6,15 +6,15 @@ export default function Projects({ data }) {
 
   return (
     <section id="projects" className="py-20 px-6 bg-bg-alt">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.5 }}
         >
-          <p className="font-mono text-xs tracking-[0.25em] text-primary mb-3 text-center">05 / PROJECTS</p>
-          <h2 className="text-3xl font-bold text-text-heading text-center mb-4">项目精选</h2>
+          <p className="eyebrow text-center mb-3">PROJECTS</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-text-heading text-center mb-4">项目精选</h2>
           <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-12" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

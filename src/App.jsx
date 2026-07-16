@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Stats from './components/Stats';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Skills from './components/Skills';
@@ -16,13 +17,14 @@ export default function App() {
       <main>
         <Hero data={profileData} />
         <About data={profileData} />
+        <Stats data={profileData} />
         <Experience data={profileData} />
         <Education data={profileData} />
         <Skills data={profileData} />
         <Projects data={profileData} />
         <Contact data={profileData} />
       </main>
-      <Footer />
+      <Footer data={profileData} />
     </div>
   );
 }

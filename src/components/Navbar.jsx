@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiX, FiDownload } from 'react-icons/fi';
 
 const navItems = [
   { id: 'about', label: '关于' },
@@ -33,12 +33,14 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        {/* Brand */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="flex items-center gap-1.5 text-xl font-bold text-text-heading tracking-tight"
+          className="text-xl font-extrabold text-text-heading tracking-tight"
         >
-          <span className="font-mono text-primary">~/</span>李园
+          李园
+          <span className="text-primary">.</span>
         </button>
 
         {/* Desktop nav */}
@@ -52,6 +54,13 @@ export default function Navbar() {
               {item.label}
             </button>
           ))}
+          <button
+            onClick={() => scrollTo('contact')}
+            className="inline-flex items-center gap-1.5 bg-gradient-brand text-white text-sm font-semibold px-4 py-2 rounded-full hover:opacity-90 transition-opacity"
+          >
+            <FiDownload size={14} />
+            下载简历
+          </button>
         </div>
 
         {/* Mobile toggle */}
@@ -75,6 +84,13 @@ export default function Navbar() {
               {item.label}
             </button>
           ))}
+          <button
+            onClick={() => scrollTo('contact')}
+            className="inline-flex items-center justify-center gap-1.5 bg-gradient-brand text-white text-sm font-semibold px-4 py-2 rounded-full"
+          >
+            <FiDownload size={14} />
+            下载简历
+          </button>
         </div>
       )}
     </nav>

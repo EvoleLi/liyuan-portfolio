@@ -1,96 +1,87 @@
 import { motion } from 'framer-motion';
-import { FiMail, FiMapPin, FiSend } from 'react-icons/fi';
-import { useState } from 'react';
+import { FiMail, FiMapPin, FiGithub, FiLinkedin, FiBookOpen } from 'react-icons/fi';
 
 export default function Contact({ data }) {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Since we don't have a backend, open mailto as fallback
-    const form = e.target;
-    const name = form.name.value;
-    const subject = form.subject.value;
-    const message = form.message.value;
-    window.location.href = `mailto:${data.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`来自 ${name}：\n\n${message}`)}`;
-    setSubmitted(true);
-    form.reset();
-  };
-
   return (
-    <section id="contact" className="py-20 px-6">
-      <div className="max-w-2xl mx-auto">
+    <section id="contact" className="py-20 px-6 bg-bg-alt">
+      <div className="max-w-3xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.5 }}
         >
-          <p className="font-mono text-xs tracking-[0.25em] text-primary mb-3 text-center">06 / CONTACT</p>
-          <h2 className="text-3xl font-bold text-text-heading text-center mb-4">联系我</h2>
-          <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-8" />
-
-          <p className="text-center text-text-light mb-10">
-            如果你对我的经历感兴趣，欢迎通过以下方式联系我
+          <p className="eyebrow mb-3">CONTACT</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4">
+            一起做点有意思的东西？
+          </h2>
+          <p className="text-text-light mb-9 max-w-xl mx-auto">
+            如果你正在寻找一名嵌入式软件工程师，或对我的项目感兴趣，欢迎随时联系我。
           </p>
 
-          {/* Quick contact cards */}
-          <div className="flex flex-wrap justify-center gap-4 mb-10">
+          {/* 主 CTA */}
+          <div className="flex flex-wrap justify-center gap-4 mb-9">
             <a
               href={`mailto:${data.email}`}
-              className="flex items-center gap-2 bg-bg-alt border border-border rounded-lg px-5 py-3 hover:border-primary hover:text-primary transition-colors"
+              className="inline-flex items-center gap-2 bg-gradient-brand text-white px-7 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity"
             >
               <FiMail size={18} />
-              <span className="text-sm">{data.email}</span>
+              {data.email}
             </a>
-            {data.location && (
-              <div className="flex items-center gap-2 bg-bg-alt border border-border rounded-lg px-5 py-3">
+            {data.phone && (
+              <a
+                href={`tel:${data.phone}`}
+                className="inline-flex items-center gap-2 border border-border text-text px-7 py-3 rounded-full font-semibold hover:border-primary hover:text-primary transition-colors"
+              >
                 <FiMapPin size={18} />
-                <span className="text-sm">{data.location}</span>
-              </div>
+                {data.phone}
+              </a>
             )}
           </div>
 
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input
-                type="text"
-                name="name"
-                required
-                placeholder="你的名字"
-                className="w-full border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
-              />
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="你的邮箱"
-                className="w-full border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
-              />
-            </div>
-            <input
-              type="text"
-              name="subject"
-              required
-              placeholder="主题"
-              className="w-full border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
-            />
-            <textarea
-              name="message"
-              required
-              rows={4}
-              placeholder="你的留言..."
-              className="w-full border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition resize-none"
-            />
-            <button
-              type="submit"
-              className="w-full bg-gradient-brand text-white py-3 rounded-lg font-medium hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2"
+          {/* 社交链接 */}
+          <div className="flex justify-center gap-5">
+            {data.github && (
+              <a
+                href={data.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-light hover:text-primary transition-colors"
+                title="GitHub"
+              >
+                <FiGithub size={22} />
+              </a>
+            )}
+            {data.linkedin && (
+              <a
+                href={data.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-light hover:text-primary transition-colors"
+                title="LinkedIn"
+              >
+                <FiLinkedin size={22} />
+              </a>
+            )}
+            {data.blog && (
+              <a
+                href={data.blog}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-light hover:text-primary transition-colors"
+                title="博客"
+              >
+                <FiBookOpen size={22} />
+              </a>
+            )}
+            <a
+              href={`mailto:${data.email}`}
+              className="text-text-light hover:text-primary transition-colors"
+              title="邮箱"
             >
-              <FiSend size={16} />
-              {submitted ? '已发送！' : '发送消息'}
-            </button>
-          </form>
+              <FiMail size={22} />
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

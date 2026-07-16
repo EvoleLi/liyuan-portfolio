@@ -10,8 +10,8 @@ export default function Experience({ data }) {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.5 }}
         >
-          <p className="font-mono text-xs tracking-[0.25em] text-primary mb-3 text-center">02 / EXPERIENCE</p>
-          <h2 className="text-3xl font-bold text-text-heading text-center mb-4">工作经历</h2>
+          <p className="eyebrow text-center mb-3">EXPERIENCE</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-text-heading text-center mb-4">工作经历</h2>
           <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-12" />
 
           {/* Timeline */}
