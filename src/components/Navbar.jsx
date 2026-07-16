@@ -35,9 +35,9 @@ export default function Navbar() {
       <div className="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="text-xl font-bold text-text-heading tracking-tight"
+          className="flex items-center gap-1.5 text-xl font-bold text-text-heading tracking-tight"
         >
-          Portfolio
+          <span className="font-mono text-primary">~/</span>李园
         </button>
 
         {/* Desktop nav */}

@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="py-8 px-6 border-t border-border">
       <div className="max-w-3xl mx-auto text-center text-sm text-text-light">
-        <p>&copy; {year} Portfolio. All rights reserved.</p>
+        <p>&copy; {year} 李园 · 嵌入式软件工程师 · 用代码连接软硬件世界</p>
       </div>
     </footer>
   );

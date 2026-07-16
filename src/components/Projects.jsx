@@ -13,8 +13,9 @@ export default function Projects({ data }) {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.5 }}
         >
+          <p className="font-mono text-xs tracking-[0.25em] text-primary mb-3 text-center">05 / PROJECTS</p>
           <h2 className="text-3xl font-bold text-text-heading text-center mb-4">项目精选</h2>
-          <div className="w-12 h-1 bg-primary mx-auto rounded-full mb-12" />
+          <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-12" />
 
           <div className="grid grid-cols-1 gap-6">
             {data.projects.map((proj, i) => (
@@ -24,7 +25,7 @@ export default function Projects({ data }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white border border-border rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col"
+                className="bg-white border border-border rounded-xl p-6 hover:shadow-md hover:-translate-y-0.5 transition flex flex-col"
               >
                 <h3 className="font-semibold text-lg text-text-heading mb-2">{proj.name}</h3>
                 <p className="text-text-light text-sm flex-1 mb-3">{proj.description}</p>

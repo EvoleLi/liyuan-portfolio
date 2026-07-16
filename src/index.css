@@ -1,22 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #2563eb;
-  --color-primary-dark: #1d4ed8;
-  --color-primary-light: #dbeafe;
-  --color-text: #374151;
-  --color-text-light: #6b7280;
-  --color-text-heading: #111827;
+  /* 参考 notefolio「FURAI BIOS」的极简科技配色 */
+  --color-primary: #1b48ff;        /* 电光蓝 */
+  --color-primary-dark: #163bd6;
+  --color-primary-light: #eaefff;
+  --color-accent: #1ecad3;         /* 青色 */
+  --color-accent-2: #f85272;       /* 珊瑚粉 */
+  --color-accent-2-light: #fdeef1;
+
+  /* 中性色（近黑 + 暖灰，参考页文字 #161C1C） */
+  --color-text: #3c4242;
+  --color-text-light: #8a9292;
+  --color-text-heading: #161c1c;
   --color-bg: #ffffff;
-  --color-bg-alt: #f9fafb;
-  --color-border: #e5e7eb;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --color-bg-alt: #f6f8f8;
+  --color-border: #e6ebeb;
+
+  --font-sans: 'Pretendard', 'Inter', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
-/* 自定义全局样式必须放入 @layer base，
-   否则未分层规则会覆盖 Tailwind 的 @layer utilities（如 mx-auto），
-   导致所有居中容器失效。层级顺序：base < components < utilities */
 @layer base {
   * {
     margin: 0;
@@ -35,10 +39,44 @@
     background: var(--color-bg);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   ::selection {
     background: var(--color-primary-light);
     color: var(--color-primary-dark);
   }
+}
+
+/* 品牌渐变工具类（蓝 → 青） */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-gradient-brand {
+    background-image: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  }
+}
+
+/* 终端闪烁光标 */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.blink {
+  animation: blink 1s steps(1, end) infinite;
+}
+
+/* Hero 点阵网格（极淡，呼应科技感） */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(22, 28, 28, 0.05) 1px, transparent 1px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 38%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 38%, #000 30%, transparent 75%);
+  pointer-events: none;
 }

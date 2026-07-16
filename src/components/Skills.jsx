@@ -10,8 +10,9 @@ export default function Skills({ data }) {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.5 }}
         >
+          <p className="font-mono text-xs tracking-[0.25em] text-primary mb-3 text-center">04 / SKILLS</p>
           <h2 className="text-3xl font-bold text-text-heading text-center mb-4">专业技能</h2>
-          <div className="w-12 h-1 bg-primary mx-auto rounded-full mb-12" />
+          <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-12" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {data.skills.map((group, i) => (
@@ -21,16 +22,16 @@ export default function Skills({ data }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white border border-border rounded-xl p-5 hover:shadow-sm transition-shadow"
+                className="bg-white border border-border rounded-xl p-5 hover:shadow-md hover:-translate-y-0.5 transition"
               >
-                <h3 className="font-semibold text-text-heading mb-3 text-sm uppercase tracking-wide text-primary">
+                <h3 className="font-semibold text-text-heading mb-3 text-sm uppercase tracking-wide text-primary font-mono">
                   {group.category}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {group.items.map((skill) => (
                     <span
                       key={skill}
-                      className="inline-block bg-bg-alt text-text text-sm px-3 py-1.5 rounded-lg border border-border"
+                      className="inline-block bg-bg-alt text-text text-sm px-3 py-1.5 rounded-lg border border-border font-mono text-xs"
                     >
                       {skill}
                     </span>

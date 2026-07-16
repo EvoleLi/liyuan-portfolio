@@ -3,35 +3,48 @@ import { motion } from 'framer-motion';
 
 export default function Hero({ data }) {
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 pt-16">
+    <section className="relative min-h-screen flex items-center justify-center px-6 pt-16 overflow-hidden">
+      {/* 极淡点阵网格 */}
+      <div className="hero-grid" />
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="text-center max-w-2xl"
+        className="relative z-10 text-center max-w-2xl"
       >
-        <h1 className="text-5xl md:text-6xl font-bold text-text-heading tracking-tight leading-tight">
+        {/* 终端风 kicker */}
+        <p className="font-mono text-sm text-accent mb-5">
+          <span className="text-primary">~/</span>liyuan
+          <span className="text-text-light"> — portfolio v2.0</span>
+        </p>
+
+        <h1 className="text-6xl md:text-7xl font-extrabold tracking-tight text-text-heading">
           {data.name}
         </h1>
-        <p className="text-xl md:text-2xl text-primary font-medium mt-4">
+
+        {/* 角色 + 闪烁光标 */}
+        <p className="text-xl md:text-2xl text-primary font-semibold mt-3 font-mono">
           {data.title}
+          <span className="blink">_</span>
         </p>
+
         <p className="text-text-light mt-3 text-lg">{data.tagline}</p>
 
         {/* Personal Info Tags */}
         <div className="flex flex-wrap justify-center gap-3 mt-5">
           {data.age && (
-            <span className="text-sm text-text-light bg-bg-alt px-3 py-1 rounded-full border border-border">
+            <span className="text-sm text-text-light bg-bg-alt px-3 py-1 rounded-full border border-border font-mono">
               {data.age}岁
             </span>
           )}
           {data.location && (
-            <span className="text-sm text-text-light bg-bg-alt px-3 py-1 rounded-full border border-border">
+            <span className="text-sm text-text-light bg-bg-alt px-3 py-1 rounded-full border border-border font-mono">
               {data.location}
             </span>
           )}
           {data.jobIntentions?.availability && (
-            <span className="text-sm text-primary bg-primary-light px-3 py-1 rounded-full font-medium">
+            <span className="text-sm text-accent-2 bg-accent-2-light px-3 py-1 rounded-full font-medium">
               {data.jobIntentions.availability}
             </span>
           )}

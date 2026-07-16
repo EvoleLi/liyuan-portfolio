@@ -12,8 +12,9 @@ export default function Education({ data }) {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.5 }}
         >
+          <p className="font-mono text-xs tracking-[0.25em] text-primary mb-3 text-center">03 / EDUCATION</p>
           <h2 className="text-3xl font-bold text-text-heading text-center mb-4">教育背景</h2>
-          <div className="w-12 h-1 bg-primary mx-auto rounded-full mb-8" />
+          <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-8" />
 
           <div className="flex justify-center">
             {data.education.map((edu, i) => (

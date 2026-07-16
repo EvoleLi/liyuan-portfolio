@@ -10,8 +10,9 @@ export default function Experience({ data }) {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.5 }}
         >
+          <p className="font-mono text-xs tracking-[0.25em] text-primary mb-3 text-center">02 / EXPERIENCE</p>
           <h2 className="text-3xl font-bold text-text-heading text-center mb-4">工作经历</h2>
-          <div className="w-12 h-1 bg-primary mx-auto rounded-full mb-12" />
+          <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-12" />
 
           {/* Timeline */}
           <div className="relative border-l-2 border-border ml-4 md:ml-0 md:border-l-0">
@@ -28,7 +29,7 @@ export default function Experience({ data }) {
                 <div className="absolute left-[-9px] top-1 w-4 h-4 bg-primary rounded-full border-4 border-white md:hidden" />
 
                 {/* Card */}
-                <div className="bg-white border border-border rounded-xl p-6 hover:shadow-md transition-shadow">
+                <div className="bg-white border border-border rounded-xl p-6 hover:shadow-md hover:-translate-y-0.5 transition">
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                     <div>
                       <h3 className="font-semibold text-lg text-text-heading">{exp.role}</h3>

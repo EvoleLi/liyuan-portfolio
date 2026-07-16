@@ -18,8 +18,9 @@ export default function About({ data }) {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.5 }}
         >
+          <p className="font-mono text-xs tracking-[0.25em] text-primary mb-3 text-center">01 / ABOUT</p>
           <h2 className="text-3xl font-bold text-text-heading text-center mb-4">关于我</h2>
-          <div className="w-12 h-1 bg-primary mx-auto rounded-full mb-8" />
+          <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-8" />
 
           <p className="text-lg text-text text-center max-w-lg mx-auto leading-relaxed">
             {data.about}
@@ -36,10 +37,10 @@ export default function About({ data }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="bg-white rounded-xl p-6 shadow-sm border border-border text-center hover:shadow-md transition-shadow w-full"
+                  className="bg-white rounded-xl p-6 shadow-sm border border-border text-center hover:shadow-md hover:-translate-y-0.5 transition w-full"
                 >
-                  <div className="w-12 h-12 bg-primary-light rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <Icon className="text-primary" size={22} />
+                  <div className="w-12 h-12 bg-gradient-brand rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <Icon className="text-white" size={22} />
                   </div>
                   <h3 className="font-semibold text-text-heading mb-1">{item.title}</h3>
                   <p className="text-sm text-text-light">{item.desc}</p>

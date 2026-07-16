@@ -26,8 +26,9 @@ export default function Contact({ data }) {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.5 }}
         >
+          <p className="font-mono text-xs tracking-[0.25em] text-primary mb-3 text-center">06 / CONTACT</p>
           <h2 className="text-3xl font-bold text-text-heading text-center mb-4">联系我</h2>
-          <div className="w-12 h-1 bg-primary mx-auto rounded-full mb-8" />
+          <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-8" />
 
           <p className="text-center text-text-light mb-10">
             如果你对我的经历感兴趣，欢迎通过以下方式联系我
@@ -84,7 +85,7 @@ export default function Contact({ data }) {
             />
             <button
               type="submit"
-              className="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-primary-dark transition-colors inline-flex items-center justify-center gap-2"
+              className="w-full bg-gradient-brand text-white py-3 rounded-lg font-medium hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2"
             >
               <FiSend size={16} />
               {submitted ? '已发送！' : '发送消息'}
