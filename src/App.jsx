@@ -13,7 +13,7 @@ import profileData from './data/profile.json';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-bg">
       <ScrollProgress />
       <Navbar />
       <main>

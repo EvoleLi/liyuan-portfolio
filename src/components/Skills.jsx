@@ -12,14 +12,14 @@ export default function Skills({ data }) {
         >
           <p className="eyebrow text-center mb-3">SKILLS</p>
           <h2 className="text-3xl md:text-4xl font-bold text-text-heading text-center mb-4">专业技能</h2>
-          <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-12" />
+          <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-12 divider-animate" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {data.skills.map((group, i) => (
               <motion.div
                 key={group.category}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20, scale: 0.96 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="card p-5"

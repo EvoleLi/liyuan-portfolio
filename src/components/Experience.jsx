@@ -12,7 +12,7 @@ export default function Experience({ data }) {
         >
           <p className="eyebrow text-center mb-3">EXPERIENCE</p>
           <h2 className="text-3xl md:text-4xl font-bold text-text-heading text-center mb-4">工作经历</h2>
-          <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-12" />
+          <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-12 divider-animate" />
 
           {/* Timeline */}
           <div className="relative border-l-2 border-border ml-4 md:ml-0 md:border-l-0">

@@ -20,7 +20,7 @@ export default function About({ data }) {
         >
           <p className="eyebrow text-center mb-3">ABOUT</p>
           <h2 className="text-3xl md:text-4xl font-bold text-text-heading text-center mb-4">关于我</h2>
-          <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-8" />
+          <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-8 divider-animate" />
 
           <p className="text-lg text-text text-center max-w-2xl mx-auto leading-relaxed">
             {data.about}
@@ -33,8 +33,8 @@ export default function About({ data }) {
               return (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 20, scale: 0.96 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
                   className="card p-6 text-center"

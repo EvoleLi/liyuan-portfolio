@@ -14,7 +14,7 @@ export default function Education({ data }) {
         >
           <p className="eyebrow text-center mb-3">EDUCATION</p>
           <h2 className="text-3xl md:text-4xl font-bold text-text-heading text-center mb-4">教育背景</h2>
-          <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-8" />
+          <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-8 divider-animate" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {data.education.map((edu, i) => (

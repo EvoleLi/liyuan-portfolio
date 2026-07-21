@@ -15,14 +15,14 @@ export default function Projects({ data }) {
         >
           <p className="eyebrow text-center mb-3">PROJECTS</p>
           <h2 className="text-3xl md:text-4xl font-bold text-text-heading text-center mb-4">项目精选</h2>
-          <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-12" />
+          <div className="w-12 h-1 bg-gradient-brand mx-auto rounded-full mb-12 divider-animate" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {data.projects.map((proj, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20, scale: 0.96 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="card p-6 flex flex-col"

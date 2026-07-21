@@ -81,7 +81,7 @@ export default function Navbar() {
           ))}
           <button
             onClick={() => scrollTo('contact')}
-            className="inline-flex items-center gap-1.5 bg-gradient-brand text-white text-sm font-semibold px-4 py-2 rounded-full hover:opacity-90 transition-opacity"
+            className="magnetic-btn inline-flex items-center gap-1.5 bg-gradient-brand text-white text-sm font-semibold px-4 py-2 rounded-full hover:opacity-90 transition-opacity shadow-sm"
           >
             <FiDownload size={14} />
             下载简历
@@ -111,7 +111,7 @@ export default function Navbar() {
           ))}
           <button
             onClick={() => scrollTo('contact')}
-            className="inline-flex items-center justify-center gap-1.5 bg-gradient-brand text-white text-sm font-semibold px-4 py-2 rounded-full"
+            className="magnetic-btn inline-flex items-center justify-center gap-1.5 bg-gradient-brand text-white text-sm font-semibold px-4 py-2 rounded-full shadow-sm"
           >
             <FiDownload size={14} />
             下载简历
