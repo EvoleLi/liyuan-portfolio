@@ -16,13 +16,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROFILE = os.path.join(ROOT, 'src', 'data', 'profile.json')
 OUT = os.path.join(ROOT, 'public', 'resume.pdf')
 
-# 靛蓝 + 石板 色板（与 index.css @theme 对齐）
-STONE_900 = '#0f172a'   # slate-900 主文字/标题
-STONE_700 = '#334155'   # slate-700 次级文字
-STONE_600 = '#4f46e5'   # indigo-600 强调/小标题
-STONE_500 = '#64748b'   # slate-500 弱化文字
-STONE_200 = '#e2e8f0'   # slate-200 边框
-STONE_100 = '#eef2ff'   # indigo-50 浅底标签
+# 暗夜香槟金 站点配色，但简历保持浅色可打印；强调用深香槟金保证对比度
+STONE_900 = '#14151a'   # 近黑 正文/标题（打印可读）
+STONE_700 = '#52525b'   # 次级文字
+STONE_600 = '#9a7b33'   # 深香槟金 强调/小标题（白底可读）
+STONE_500 = '#71717a'   # 弱化文字
+STONE_200 = '#e7e3da'   # 暖浅边框
+STONE_100 = '#fbf7ef'   # 奶油色 标签底
 
 with open(PROFILE, encoding='utf-8') as f:
     d = json.load(f)

@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  /* 靛蓝 + 石板 色板（indigo + slate） */
-  --color-primary: #4f46e5;        /* indigo-600 按钮 / 强调 / 链接 */
-  --color-primary-dark: #4338ca;  /* indigo-700 悬浮 */
-  --color-primary-light: #eef2ff; /* indigo-50 标签底 */
-  --color-accent: #6366f1;        /* indigo-500 次级点缀 */
-  --color-text: #0f172a;          /* slate-900 正文 */
-  --color-text-light: #64748b;    /* slate-500 次级文字 */
-  --color-text-heading: #0f172a;  /* slate-900 标题 */
-  --color-bg: #ffffff;
-  --color-bg-alt: #f8fafc;        /* slate-50 浅底区块 */
-  --color-border: #e2e8f0;        /* slate-200 边框 */
+  /* 暗夜香槟金（Obsidian × Champagne）高级质感配色 */
+  --color-primary: #c8a86a;        /* 香槟金 强调 / 链接 / CTA */
+  --color-primary-dark: #b0904e;  /* 深香槟 悬浮 */
+  --color-primary-light: rgba(200, 168, 106, 0.10); /* 香槟金 标签底(半透明) */
+  --color-accent: #c8a86a;        /* 香槟金 次级点缀 */
+  --color-text: #e8e8ea;          /* 近白 正文 */
+  --color-text-light: #9a9aa3;    /* 弱化灰 次级文字 */
+  --color-text-heading: #f5f5f3;  /* 暖白 标题 */
+  --color-bg: #0b0b0d;            /* 近黑 底 */
+  --color-bg-alt: #15151a;        /* 抬升面 浅黑 */
+  --color-border: #26262c;        /* 细分隔线 */
   --font-sans: 'Inter', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
@@ -60,16 +60,16 @@
     text-transform: uppercase;
     color: var(--color-primary);
   }
-  /* 精致卡片：细边框 + 大圆角 + 柔和阴影，悬浮轻微上浮（无炫光） */
+  /* 精致卡片：暗色抬升面 + 细边框 + 大圆角，悬浮轻微上浮 + 香槟描边 */
   .card {
-    background: #ffffff;
+    background: var(--color-bg-alt);
     border: 1px solid var(--color-border);
     border-radius: 1.25rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   }
   .card:hover {
     transform: translateY(-4px);
-    border-color: #c7d2fe;
-    box-shadow: 0 22px 45px -24px rgba(15, 23, 42, 0.22);
+    border-color: rgba(200, 168, 106, 0.45);
+    box-shadow: 0 22px 45px -24px rgba(0, 0, 0, 0.7);
   }
 }

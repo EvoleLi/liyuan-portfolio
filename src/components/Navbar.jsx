@@ -47,7 +47,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/80 backdrop-blur-lg shadow-sm border-b border-border'
+          ? 'bg-bg/80 backdrop-blur-lg shadow-sm border-b border-border'
           : 'bg-transparent'
       }`}
     >
@@ -99,7 +99,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-border px-6 py-4 flex flex-col gap-3">
+        <div className="md:hidden bg-bg border-t border-border px-6 py-4 flex flex-col gap-3">
           {navItems.map((item) => (
             <button
               key={item.id}
