@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  /* 暗夜香槟金（Obsidian × Champagne）高级质感配色 */
-  --color-primary: #c8a86a;        /* 香槟金 强调 / 链接 / CTA */
-  --color-primary-dark: #b0904e;  /* 深香槟 悬浮 */
-  --color-primary-light: rgba(200, 168, 106, 0.10); /* 香槟金 标签底(半透明) */
-  --color-accent: #c8a86a;        /* 香槟金 次级点缀 */
-  --color-text: #e8e8ea;          /* 近白 正文 */
-  --color-text-light: #9a9aa3;    /* 弱化灰 次级文字 */
-  --color-text-heading: #f5f5f3;  /* 暖白 标题 */
-  --color-bg: #0b0b0d;            /* 近黑 底 */
-  --color-bg-alt: #15151a;        /* 抬升面 浅黑 */
-  --color-border: #26262c;        /* 细分隔线 */
+  /* 亮色高级风：骨白底 + 墨字 + 香槟古铜金强调 */
+  --color-primary: #9a7b33;        /* 古铜金 强调 / 链接 / CTA */
+  --color-primary-dark: #7d6228;  /* 深古铜 悬浮 */
+  --color-primary-light: rgba(154, 123, 51, 0.12); /* 古铜金 标签底 */
+  --color-accent: #9a7b33;        /* 古铜金 次级点缀 */
+  --color-text: #211f1b;          /* 暖墨 正文 */
+  --color-text-light: #6f6b63;    /* 暖灰 次级文字 */
+  --color-text-heading: #1a1815;  /* 深墨 标题 */
+  --color-bg: #fbfaf8;            /* 骨白 底 */
+  --color-bg-alt: #ffffff;        /* 纯白 抬升面 */
+  --color-border: #e9e4da;        /* 暖浅边框 */
   --font-sans: 'Inter', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
@@ -112,7 +112,7 @@
     animation: float-slow 6s ease-in-out infinite;
   }
 
-  /* ── 精致卡片（增强版） ── */
+  /* ── 精致卡片（亮色增强版） ── */
   .card {
     background: var(--color-bg-alt);
     border: 1px solid var(--color-border);
@@ -122,8 +122,8 @@
   }
   .card:hover {
     transform: translateY(-6px) scale(1.01);
-    border-color: rgba(200, 168, 106, 0.45);
-    box-shadow: 0 28px 56px -20px rgba(0, 0, 0, 0.75), 0 0 30px -12px rgba(200, 168, 106, 0.12);
+    border-color: rgba(154, 123, 51, 0.5);
+    box-shadow: 0 24px 50px -22px rgba(33, 31, 27, 0.22), 0 0 28px -14px rgba(154, 123, 51, 0.18);
   }
 
   /* ── 磁性按钮容器 ── */
