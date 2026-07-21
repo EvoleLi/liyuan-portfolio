@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  /* Stone 暖灰中性色板（参考 astro-theme-stone） */
-  --color-primary: #57534e;        /* stone-600 按钮 / 强调 */
-  --color-primary-dark: #44403c;  /* stone-700 悬浮 */
-  --color-primary-light: #f5f5f4; /* stone-100 标签底 */
-  --color-accent: #78716c;        /* stone-500 次级 */
-  --color-text: #1c1917;        /* stone-900 */
-  --color-text-light: #78716c;    /* stone-500 */
-  --color-text-heading: #1c1917; /* stone-900 */
+  /* 靛蓝 + 石板 色板（indigo + slate） */
+  --color-primary: #4f46e5;        /* indigo-600 按钮 / 强调 / 链接 */
+  --color-primary-dark: #4338ca;  /* indigo-700 悬浮 */
+  --color-primary-light: #eef2ff; /* indigo-50 标签底 */
+  --color-accent: #6366f1;        /* indigo-500 次级点缀 */
+  --color-text: #0f172a;          /* slate-900 正文 */
+  --color-text-light: #64748b;    /* slate-500 次级文字 */
+  --color-text-heading: #0f172a;  /* slate-900 标题 */
   --color-bg: #ffffff;
-  --color-bg-alt: #fafaf9;     /* stone-50 */
-  --color-border: #e7e5e4;     /* stone-200 */
+  --color-bg-alt: #f8fafc;        /* slate-50 浅底区块 */
+  --color-border: #e2e8f0;        /* slate-200 边框 */
   --font-sans: 'Inter', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
@@ -69,7 +69,7 @@
   }
   .card:hover {
     transform: translateY(-4px);
-    border-color: #d6d3d1;
-    box-shadow: 0 22px 45px -24px rgba(28, 25, 23, 0.18);
+    border-color: #c7d2fe;
+    box-shadow: 0 22px 45px -24px rgba(15, 23, 42, 0.22);
   }
 }

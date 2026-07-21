@@ -16,13 +16,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROFILE = os.path.join(ROOT, 'src', 'data', 'profile.json')
 OUT = os.path.join(ROOT, 'public', 'resume.pdf')
 
-# Stone 色板（与 index.css @theme 对齐）
-STONE_900 = '#1c1917'   # 主文字/标题
-STONE_700 = '#44403c'   # 次级文字
-STONE_600 = '#57534e'   # 强调/小标题
-STONE_500 = '#78716c'   # 弱化文字
-STONE_200 = '#e7e5e4'   # 边框
-STONE_100 = '#f5f5f4'   # 浅底标签
+# 靛蓝 + 石板 色板（与 index.css @theme 对齐）
+STONE_900 = '#0f172a'   # slate-900 主文字/标题
+STONE_700 = '#334155'   # slate-700 次级文字
+STONE_600 = '#4f46e5'   # indigo-600 强调/小标题
+STONE_500 = '#64748b'   # slate-500 弱化文字
+STONE_200 = '#e2e8f0'   # slate-200 边框
+STONE_100 = '#eef2ff'   # indigo-50 浅底标签
 
 with open(PROFILE, encoding='utf-8') as f:
     d = json.load(f)
