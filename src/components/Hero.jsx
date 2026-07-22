@@ -23,7 +23,7 @@ export default function Hero({ data }) {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-16 overflow-hidden bg-bg">
       {/* 自包含 SVG 动效背景：香槟光晕 + 细金点阵 + 电路信号流动 + 示波波 */}
-      <img src="/hero-bg.svg" alt="" aria-hidden="true" className="hero-bg-img" />
+      <div className="hero-bg-img" aria-hidden="true" />
       <Particles />
       <motion.div
         initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
