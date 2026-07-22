@@ -22,9 +22,8 @@ function Particles() {
 export default function Hero({ data }) {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-16 overflow-hidden bg-bg">
-      {/* 亮色高级风背景：柔和香槟光晕 + 向边缘淡出的细金点阵 */}
-      <div className="hero-glow" aria-hidden="true" />
-      <div className="hero-grid" aria-hidden="true" />
+      {/* 自包含 SVG 动效背景：香槟光晕 + 细金点阵 + 电路信号流动 + 示波波 */}
+      <img src="/hero-bg.svg" alt="" aria-hidden="true" className="hero-bg-img" />
       <Particles />
       <motion.div
         initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
