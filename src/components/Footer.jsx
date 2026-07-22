@@ -17,7 +17,7 @@ export default function Footer({ data }) {
         {/* 品牌 */}
         <div>
           <h3 className="text-lg font-extrabold text-text-heading tracking-tight">
-            李园<span className="text-primary">.</span>
+            李园
           </h3>
           <p className="text-sm text-text-light mt-3 max-w-xs leading-relaxed">
             嵌入式软件工程师，专注 STM32 / FreeRTOS 智能硬件开发，兼具 Android 原生开发经验。

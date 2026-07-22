@@ -58,7 +58,6 @@ export default function Navbar() {
           className="text-xl font-extrabold text-text-heading tracking-tight"
         >
           李园
-          <span className="text-primary">.</span>
         </button>
 
         {/* Desktop nav */}
