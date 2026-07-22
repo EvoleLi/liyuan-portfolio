@@ -134,16 +134,18 @@
     transition: transform 0.25s cubic-bezier(.22,1,.36,1);
   }
 
-  /* ── Hero 背景：自包含 SVG 动效（光晕+点阵+电路+示波波） ── */
+  /* ── Hero 背景：自包含 SVG 动效（光晕+点阵+电路+示波波，内联 DOM） ── */
   .hero-bg-img {
     position: absolute;
     inset: 0;
     z-index: 0;
     pointer-events: none;
     opacity: 0.95;
-    background-image: url('/hero-bg.svg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    line-height: 0;
+  }
+  .hero-bg-img svg {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 }

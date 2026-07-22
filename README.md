@@ -1,70 +1,120 @@
-# 李园 · 个人求职网站
+# 李园 · 个人作品集
 
-基于 React + Vite + Tailwind CSS 构建的单页个人求职网站，内容聚焦嵌入式软件工程师方向。
+> 嵌入式软件工程师的在线简历与作品展示网站
+>
+> 🔗 **在线访问**：https://evoleli.github.io/liyuan-portfolio/
 
-## 本地预览
+---
 
-```bash
-npm install
-npm run dev      # 开发模式，访问 http://localhost:5173
-npm run build    # 生产构建，产物输出到 dist/
-npm run preview  # 本地预览构建产物
-```
+## 关于本项目
 
-## 修改内容
-
-所有网站文案、经历、项目、技能都集中在 **`src/data/profile.json`** 一个文件中，
-修改后重新 `npm run build` 即可生效，无需改动任何组件代码。
-
-常用修改点：
-
-| 字段 | 说明 |
-|------|------|
-| `name` / `age` / `title` / `tagline` | 首屏基础信息 |
-| `email` / `phone` / `github` | 联系方式（github 填你的真实用户名） |
-| `jobIntentions` | 求职意向（岗位 / 薪资 / 到岗时间 / 城市） |
-| `about` | 自我评价 |
-| `highlights` | 核心优势卡片 |
-| `experience` | 工作经历（数组，可多条） |
-| `education` | 教育背景 |
-| `skills` | 技能分类 |
-| `projects` | 项目经验（数组，可多条） |
-| `resumeFile` | 简历 PDF（放在 `public/resume.pdf`） |
-
-> 替换简历：把新 PDF 覆盖到 `public/resume.pdf` 即可，文件名保持一致。
-
-## 部署到 GitHub Pages（自动）
-
-本项目已配置 GitHub Actions 自动部署，推送 `main` 分支即自动上线。
-
-### 步骤
-
-1. 在 GitHub 新建仓库（两种任选其一）：
-   - **用户站点**：仓库名必须为 `你的用户名.github.io`，最终访问地址 `https://你的用户名.github.io/`
-   - **项目站点**：任意仓库名，如 `portfolio`，访问地址 `https://你的用户名.github.io/portfolio/`
-
-2. 本地初始化并提交（仓库根目录即 `portfolio/`）：
-
-   ```bash
-   git init
-   git add .
-   git commit -m "init: personal portfolio site"
-   git branch -M main
-   git remote add origin https://github.com/你的用户名/仓库名.git
-   git push -u origin main
-   ```
-
-3. 在仓库 **Settings → Pages → Build and deployment** 中，
-   将 Source 改为 **GitHub Actions**。
-
-4. 推送后 Actions 会自动构建部署，约 1 分钟后在上方地址访问。
-
-> 若使用项目站点（非 `xxx.github.io` 仓库），`vite.config.js` 中的 `base: './'`
-> 已确保相对路径正确，无需额外修改。
+这是一个为**嵌入式软件工程师李园**量身定制的个人作品集网站，以现代化前端技术栈构建，专业、优雅地呈现技术能力、项目经历与教育背景。
 
 ## 技术栈
 
-- React 18 + Vite 5
-- Tailwind CSS v4
-- Framer Motion（滚动入场动画）
-- React Icons
+| 类别 | 技术 |
+|------|------|
+| 前端框架 | React 18 |
+| 构建工具 | Vite 8.x |
+| 样式方案 | Tailwind CSS v4（`@theme` 令牌化设计系统） |
+| 动效引擎 | Framer Motion（入场动画 / 视差滚动） |
+| 图标库 | react-icons（Feather Icons） |
+| 部署平台 | GitHub Pages（`gh-pages` 分支） |
+
+## 设计风格
+
+### 配色方案：亮色高级风（骨白 + 古铜金）
+
+```
+主色调   #9a7b33  ── 古铜金（强调色 / 链接 / CTA 按钮）
+深色调   #7d6228  ── 悬浮态古铜金
+背景色   #fbfaf8  ── 骨白（页面底色）
+文字色   #211f1b  ── 暖墨（正文）
+标题色   #1a1815  ── 深墨（标题）
+边框色   #e9e4da  ── 暖浅边框
+```
+
+### 动效设计
+
+| 动效 | 应用位置 | 描述 |
+|------|----------|------|
+| Shimmer 流光 | Hero 标题 | 金色渐变文字 + 4s 无限循环横向流光 |
+| Divider 生长 | 各板块分隔线 | 0.7s 从左向右生长的渐变分割线 |
+| 漂浮粒子 | Hero 背景 | 4 个金色圆点缓慢上下漂浮（6s 周期） |
+| 磁性按钮 | CTA 按钮 | hover 时轻微上浮 + 缩放 + 香槟阴影 |
+| 卡片悬浮 | About/Skills/Projects 卡片 | hover 时 `translateY(-6px)` + `scale(1.01)` |
+| SVG 动效背景 | Hero 全屏底图 | 自包含 SMIL 动画：香槟光晕 + 细金点阵 + 电路信号流动 + 示波正弦波 |
+
+### SVG 动效背景（嵌入式工程师专属）
+
+Hero 区域采用一张 **自包含 SVG 动画**作为全屏背景，内联进 DOM 以保证首帧即稳定播放，包含四层视觉母题：
+
+1. **香槟光晕层** — 右上角 + 左下角径向渐变柔光
+2. **细金点阵层** — 34px 间距圆点阵列，向边缘自然淡出
+3. **电路走线层** — 8 节点折线 + 节点呼吸明暗 + 双信号点沿路径流动，呼应 **STM32/MCU 电路设计**
+4. **示波波形层** — 中部正弦波横向无缝滚动，呼应 **FreeRTOS 时序 / 示波器调试**
+
+所有元素使用古铜金低透明度渲染，保证前景文字清晰可读。
+
+## 页面结构
+
+```
+Navbar（固定顶栏：品牌名 + 导航 + 下载简历）
+Hero（首屏：名字 + 标题 + 标语 + CTA 按钮 + SVG 动效背景）
+About（个人简介 + 4 大亮点卡片）
+Experience（工作经历）
+Education（教育背景 + 实习经历）
+Skills（7 大技能分类标签云）
+Projects（4 个核心项目详情卡片）
+Contact（联系方式 + 简历下载）
+Footer（版权信息）
+```
+
+## 核心项目展示
+
+### 1. 基于 STM32+FreeRTOS 智能家居监控与控制系统
+- **核心技术**：STM32F103ZET6 / FreeRTOS / ESP8266 / MQTT / OneNET
+- **亮点**：8 任务优先级调度、24h+ 无死锁稳定运行、99.5% 数据传输成功率、三级声光告警
+
+### 2. 多媒体安防监控系统
+- **核心技术**：C++ / Qt GUI / OpenCV / Socket / Linux
+- **亮点**：Qt 界面响应提升 30%、多线程并行视频分析、人脸/车牌/异常行为检测
+
+### 3. Linux 远程终端管理系统
+- **核心技术**：C++ / Linux / TCP/IP Socket / pthread / 自定义二进制协议
+- **亮点**：50+ 并发连接稳定、TCP 粘包拆包解决、秒级僵尸连接清理
+
+### 4. 智能水库管理系统 - 巡查人员端 APP
+- **核心技术**：Kotlin / MVVM / Jetpack / Coroutines / CameraX / Room
+- **亮点**：MVVM 数据驱动 UI、地图轨迹上报、弱网 Room 缓存保障
+- **荣誉**：2024 世界职业院校技能大赛入围、2025 挑战杯省级三等奖
+
+## 个人优势总结
+
+| 维度 | 能力描述 |
+|------|----------|
+| 嵌入式全栈 | 精通 STM32(F1/F4)/FreeRTOS，掌握 ARM Cortex-M 与 HAL 库，兼具 Android(Kotlin/Jetpack) 原生开发 |
+| 独立交付 | 主导智能家居等嵌入式系统从 0 到 1，亦主导智能水库等移动端应用落地 |
+| 工程化思维 | 模块化分层设计，注重可移植性与性能优化（弱网容错、APK 精简 40%） |
+| 竞赛获奖 | 挑战杯省级三等奖、移动应用创新赛全国三等奖、专业排名 Top 1% |
+
+## 荣誉证书
+
+- 🏆 挑战杯 省级三等奖（智能水库系统）— 共青团海南省委 · 2025
+- 🏆 移动应用创新赛 全国三等奖 — Apple · 2025
+- 🏆 省级优秀毕业生（前 1%）— 海南省 · 2025
+- 🏆 世界职业院校技能大赛 入围 — 教育部 · 2024
+
+## 本地开发
+
+```bash
+npm install        # 安装依赖
+npm run dev        # 启动开发服务器（localhost:5173）
+npm run build      # 构建生产版本 → dist/
+npm run preview    # 预览构建产物（localhost:4173）
+npm run resume     # 生成简历 PDF（可选，当前使用上传版本）
+```
+
+---
+
+*李园 · 嵌入式软件工程师 · 用代码连接软硬件世界*

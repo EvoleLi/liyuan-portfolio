@@ -19,11 +19,13 @@ function Particles() {
   );
 }
 
+import HeroBackground from './HeroBackground';
+
 export default function Hero({ data }) {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-16 overflow-hidden bg-bg">
-      {/* 自包含 SVG 动效背景：香槟光晕 + 细金点阵 + 电路信号流动 + 示波波 */}
-      <div className="hero-bg-img" aria-hidden="true" />
+      {/* 自包含 SVG 动效背景：香槟光晕 + 细金点阵 + 电路信号流动 + 示波波（内联 DOM，首帧即播放） */}
+      <HeroBackground />
       <Particles />
       <motion.div
         initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
