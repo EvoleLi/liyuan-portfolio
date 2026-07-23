@@ -7,6 +7,7 @@ const navItems = [
   { id: 'education', label: '教育' },
   { id: 'skills', label: '技能' },
   { id: 'projects', label: '项目' },
+  { id: 'qna', label: '问答' },
   { id: 'contact', label: '联系' },
 ];
 

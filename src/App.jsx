@@ -6,6 +6,7 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import QnA from './components/QnA';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollProgress from './components/ScrollProgress';
@@ -24,6 +25,7 @@ export default function App() {
         <Education data={profileData} />
         <Skills data={profileData} />
         <Projects data={profileData} />
+        <QnA data={profileData} />
         <Contact data={profileData} />
       </main>
       <Footer data={profileData} />
