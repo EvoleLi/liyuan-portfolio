@@ -1,0 +1,30 @@
+/* Giscus 自定义主题：亮色高级风（骨白 + 古铜金），匹配作品集配色 */
+:root {
+  --color-fg: #211f1b;
+  --color-fg-muted: #6f6b63;
+  --color-bg: #fbfaf8;
+  --color-bg-secondary: #ffffff;
+  --color-canvas: #ffffff;
+  --color-canvas-subtle: #f4f1ec;
+  --color-border: #e9e4da;
+  --color-border-muted: #efe9df;
+  --color-accent: #9a7b33;
+  --color-accent-soft: rgba(154, 123, 51, 0.12);
+  --color-accent-fg: #ffffff;
+  --color-accent-emphasis: #7d6228;
+  --color-success: #2e7d57;
+  --color-success-emphasis: #2e7d57;
+  --color-attention: #b8860b;
+  --color-attention-emphasis: #b8860b;
+  --color-danger: #b3261e;
+  --color-danger-emphasis: #b3261e;
+  --color-overlay: rgba(33, 31, 27, 0.55);
+}
+
+/* 让 Giscus 容器融入亮色卡片 */
+.gsc-comments, .gsc-main {
+  background: var(--color-bg);
+}
+.gsc-header {
+  border-color: var(--color-border);
+}
