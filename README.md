@@ -66,6 +66,7 @@ Experience（工作经历）
 Education（教育背景 + 实习经历）
 Skills（7 大技能分类标签云）
 Projects（4 个核心项目详情卡片）
+QnA（预设问答下拉列表 + 基于 Giscus 的公开提问墙）
 Contact（联系方式 + 简历下载）
 Footer（版权信息）
 ```
